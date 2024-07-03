@@ -42,7 +42,7 @@ def main():
     db_manager = DatabaseManager()
     agent_manager = AgentManager()
 
-    st.markdown('<p class="description">Welcome to NestQuest AI! We leverage advanced AI and comprehensive market data to provide you with expert housing consultancy across major US cities.</p>', unsafe_allow_html=True)
+    st.markdown('<p class="description">Welcome to Cadu AI Agents Experiments !</p>', unsafe_allow_html=True)
     st.markdown('<h2 class="sub-header">Select a City</h2>', unsafe_allow_html=True)
     
     city = st.selectbox("Choose a city to analyze:", ["New York", "Los Angeles", "Chicago", "Houston"])
@@ -70,41 +70,7 @@ def main():
     #Market Insights Section
     st.markdown('<h2 class="sub-header">Market Insights</h2>', unsafe_allow_html=True)
     st.plotly_chart(create_city_price_comparison(db_manager), use_container_width=True)
-
-
-    #Services and Trending Questions
-    st.markdown('<h2 class="sub-header">Our Services</h2>', unsafe_allow_html=True)
-    services = [
-        ("🔍 City-Specific Analysis", f"Deep dive into {city}'s housing market."),
-        ("💰 Investment Advisory", f"Personalized advice on real estate investments in {city}."),
-        ("🏘️ Property Valuation", f"Accurate estimations of property values in {city}."),
-        ("📊 Market Trends", f"Stay updated with the latest trends in {city}'s housing market."),
-    ]
-    for title, desc in services:
-        st.markdown(f"""
-        <div class="feature-box">
-            <h3 class="feature-title">{title}</h3>
-            <p class="feature-desc">{desc}</p>
-        </div>
-        """, unsafe_allow_html=True)
-
-#Contact Section
-  
-    st.markdown('<h2 class="sub-header">Whats Trending</h2>', unsafe_allow_html=True)
-    sample_questions = [
-        f"What is the average price of houses in {city}?",
-        f"What's the price range for 3-bedroom homes in {city}?",
-        f"How does the price per square foot vary in different areas of {city}?",
-        f"What's the most expensive zip code in {city}?",
-        f"How many 4-bedroom houses are available in {city}?",
-    ]
-    for question in sample_questions:
-        st.markdown(f"- {question}")
-
-    st.markdown('<h2 class="sub-header">Contact Us</h2>', unsafe_allow_html=True)
-    st.markdown(f"Have more questions about housing in {city}? Our team of expert real estate consultants is here to help!")
-    st.button("Schedule a Consultation")
-
+        
 if __name__ == "__main__":
     main()    
     
